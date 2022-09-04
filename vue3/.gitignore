@@ -9,3 +9,9 @@ node_modules
 *.log
 
 .eslintcache
+
+# unplugin-auto-import 类型声明文件
+auto-imports.d.ts
+
+# unplugin-vue-components 类型声明文件
+components.d.ts
