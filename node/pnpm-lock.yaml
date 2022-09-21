@@ -6,6 +6,7 @@ specifiers:
   '@types/node': ^18.7.18
   '@typescript-eslint/eslint-plugin': ^5.38.0
   '@typescript-eslint/parser': ^5.38.0
+  commitizen: ^4.2.5
   cz-conventional-changelog: ^3.3.0
   eslint: ^8.23.1
   eslint-config-prettier: ^8.5.0
@@ -22,6 +23,7 @@ devDependencies:
   '@types/node': 18.7.18
   '@typescript-eslint/eslint-plugin': 5.38.0_wsb62dxj2oqwgas4kadjymcmry
   '@typescript-eslint/parser': 5.38.0_irgkl5vooow2ydyo6aokmferha
+  commitizen: 4.2.5
   cz-conventional-changelog: 3.3.0
   eslint: 8.23.1
   eslint-config-prettier: 8.5.0_eslint@8.23.1
