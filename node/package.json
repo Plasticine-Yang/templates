@@ -8,6 +8,11 @@
     "dev": "nodemon",
     "prepare": "husky install"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,6 +22,7 @@
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",

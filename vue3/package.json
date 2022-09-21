@@ -14,7 +14,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "@commitlint/prompt"
+      "path": "cz-conventional-changelog"
     }
   },
   "dependencies": {
@@ -25,7 +25,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@commitlint/prompt": "^17.0.3",
     "@iconify-json/carbon": "^1.1.7",
     "@types/node": "^18.7.9",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
@@ -35,6 +34,7 @@
     "@vue/test-utils": "^2.0.2",
     "commitizen": "^4.2.5",
     "commitlint": "^17.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
