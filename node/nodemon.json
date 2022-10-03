@@ -1,6 +1,6 @@
 {
   "execMap": {
-    "ts": "ts-node-esm"
+    "ts": "esno"
   },
   "watch": ["src"],
   "ext": "js,ts"
