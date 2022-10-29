@@ -1,7 +1,4 @@
 {
-  "ts-node": {
-    "experimentalSpecifierResolution": "node"
-  },
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",
