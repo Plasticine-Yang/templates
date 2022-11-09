@@ -1,3 +1,10 @@
-# 前端开发常用模板
+# templates
 
-目前已支持的有`vue3`的模板，开箱即用
+前端开发常用模板
+
+# Features
+
+目前已支持的有:
+
+- [vue3 + TypeScript](vue3/)
+- [node + TypeScript](node/)
