@@ -11,11 +11,11 @@ specifiers:
   eslint: ^8.30.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
-  esno: ^0.16.3
   husky: ^8.0.2
   lint-staged: ^13.1.0
   prettier: ^2.8.1
   taze: ^0.8.5
+  tsx: ^3.12.1
   typescript: ^4.9.4
   vitest: ^0.23.4
 
@@ -30,11 +30,11 @@ devDependencies:
   eslint: 8.30.0
   eslint-config-prettier: 8.5.0_eslint@8.30.0
   eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
-  esno: 0.16.3
   husky: 8.0.2
   lint-staged: 13.1.0
   prettier: 2.8.1
   taze: 0.8.5
+  tsx: 3.12.1
   typescript: 4.9.4
   vitest: 0.23.4
 
@@ -1652,13 +1652,6 @@ packages:
       text-table: 0.2.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /esno/0.16.3:
-    resolution: {integrity: sha512-6slSBEV1lMKcX13DBifvnDFpNno5WXhw4j/ff7RI0y51BZiDqEe5dNhhjhIQ3iCOQuzsm2MbVzmwqbN78BBhPg==}
-    hasBin: true
-    dependencies:
-      tsx: 3.12.1
     dev: true
 
   /espree/9.4.1:
