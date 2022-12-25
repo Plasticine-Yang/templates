@@ -4,11 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "exec": "esno",
-    "dev": "nodemon",
+    "start": "esno",
     "commit": "cz",
-    "prepare": "husky install",
-    "up": "taze -wI"
+    "up": "taze -wI",
+    "prepare": "husky install"
   },
   "config": {
     "commitizen": {
@@ -32,7 +31,6 @@
     "esno": "^0.16.3",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
-    "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
     "taze": "^0.8.5",
     "typescript": "^4.9.4",
