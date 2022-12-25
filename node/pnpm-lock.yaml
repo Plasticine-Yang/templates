@@ -7,7 +7,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.47.0
   '@typescript-eslint/parser': ^5.47.0
   commitizen: ^4.2.6
-  cz-conventional-changelog: ^3.3.0
+  cz-git: ^1.4.1
   eslint: ^8.30.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
@@ -27,7 +27,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
   '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
   commitizen: 4.2.6
-  cz-conventional-changelog: 3.3.0
+  cz-git: 1.4.1
   eslint: 8.30.0
   eslint-config-prettier: 8.5.0_eslint@8.30.0
   eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
@@ -1203,6 +1203,10 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
+    dev: true
+
+  /cz-git/1.4.1:
+    resolution: {integrity: sha512-EOtuitcnfxde8t3NNTKh2YxEJhLXGiVlKSVaZipK3+DVo135rEUifAfqxkslM66Nf6ZO7a+3JR+XAOLhMXUAjQ==}
     dev: true
 
   /dargs/7.0.0:
