@@ -17,6 +17,7 @@
     "dev": "tsx --watch",
     "build": "unbuild",
     "stub": "unbuild --stub",
+    "lint": "eslint src --fix --ext=.ts,.js,.cjs,.mjs --cache --ignore-path=.gitignore",
     "commit": "cz",
     "up": "taze -wI",
     "prepare": "husky install"
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
+    "@plasticine-yang/eslint-config-typescript": "^0.1.3",
     "@types/node": "^18.11.17",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
