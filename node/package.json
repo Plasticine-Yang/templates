@@ -1,6 +1,9 @@
 {
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "author": "Plasticine-Yang",
+  "license": "MIT",
+  "description": "node template",
+  "keywords": [],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -27,9 +30,6 @@
       "path": "node_modules/cz-git"
     }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
