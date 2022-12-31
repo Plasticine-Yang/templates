@@ -1,0 +1,7 @@
+TEST_VALUE:
+  name: cookie
+
+TEST_ARR:
+  - foo
+  - bar
+  - baz
