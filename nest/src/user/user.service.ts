@@ -1,26 +1,40 @@
-import { Injectable } from '@nestjs/common'
-import { CreateUserDto } from './dto/create-user.dto'
-import { UpdateUserDto } from './dto/update-user.dto'
+import { CACHE_MANAGER, Inject, Injectable } from '@nestjs/common'
+import { Cache } from 'cache-manager'
+
+import { MongoRepository } from 'typeorm'
+
+import { User } from './entities/user.mongo.entity'
 
 @Injectable()
 export class UserService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user'
+  constructor(
+    @Inject('USER_REPOSITORY')
+    private userRepository: MongoRepository<User>,
+
+    @Inject(CACHE_MANAGER)
+    private cacheManager: Cache,
+  ) {}
+
+  createOrSave(user: User) {
+    return this.userRepository.save(user)
   }
 
-  findAll() {
-    return `This action returns all user`
-  }
+  async findAll() {
+    const cachedAllUsers = await this.cacheManager.get<User[] | undefined>(
+      'ALL_USERS',
+    )
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`
-  }
+    if (!cachedAllUsers) {
+      const users = await this.userRepository.findOneBy({
+        email: '975036719@qq.com',
+      })
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`
-  }
+      // cache all users
+      this.cacheManager.set('ALL_USERS', users)
 
-  remove(id: number) {
-    return `This action removes a #${id} user`
+      return users
+    }
+
+    return cachedAllUsers
   }
 }

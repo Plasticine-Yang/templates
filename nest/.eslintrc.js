@@ -11,5 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   ignorePatterns: ['.eslintrc.js'],
-  rules: {},
+  rules: {
+    'import/no-unresolved': 'off',
+  },
 }

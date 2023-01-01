@@ -3,7 +3,6 @@ import {
   Catch,
   ExceptionFilter,
   HttpStatus,
-  ServiceUnavailableException,
 } from '@nestjs/common'
 
 import { FastifyReply, FastifyRequest } from 'fastify'
@@ -23,7 +22,7 @@ class AllExceptionFilter implements ExceptionFilter {
       statusCode: HttpStatus.SERVICE_UNAVAILABLE,
       timestamp: new Date().toISOString(),
       path: request.url,
-      message: new ServiceUnavailableException().getResponse(),
+      message: exception.message,
     } as BusinessErrorResponse)
   }
 }

@@ -1,7 +1,19 @@
-TEST_VALUE:
-  name: cookie
+# mongodb
+MONGODB_CONFIG:
+  host: localhost
+  port: 27017
+  username: xxx
+  password: xxx
+  type: mongodb
+  database: nest_gateway
+  entities: mongo
+  logging: false
+  synchronize: true
 
-TEST_ARR:
-  - foo
-  - bar
-  - baz
+# redis
+REDIS_CONFIG:
+  host: localhost
+  port: 6379
+  username: xxx
+  password: xxx
+  database: 0
