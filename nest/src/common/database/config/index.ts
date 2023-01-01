@@ -1,1 +1,0 @@
-export { mongodbProvider } from './mongodb'

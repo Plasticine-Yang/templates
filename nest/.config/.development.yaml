@@ -1,19 +1,15 @@
-# mongodb
-MONGODB_CONFIG:
+# MySQL
+MYSQL_CONFIG:
   host: localhost
-  port: 27017
+  port: 3306
   username: xxx
   password: xxx
-  type: mongodb
-  database: nest_gateway
-  entities: mongo
-  logging: false
-  synchronize: true
+  database: plasticine-monitor
 
 # redis
 REDIS_CONFIG:
   host: localhost
   port: 6379
-  username: xxx
-  password: xxx
+  username: default
+  password: default
   database: 0

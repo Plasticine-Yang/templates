@@ -19,7 +19,7 @@ class TransformInterceptor<T>
     next: CallHandler,
   ): Observable<BusinessResponse<T>> {
     return next.handle().pipe(
-      map((data) => ({
+      map(data => ({
         code: 0,
         message: 'success',
         data,
