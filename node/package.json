@@ -18,6 +18,8 @@
   "scripts": {
     "start": "tsx",
     "dev": "tsx --watch",
+    "test": "vitest",
+    "test:u": "vitest -u",
     "build": "unbuild",
     "stub": "unbuild --stub",
     "lint": "eslint src --fix --ext=.ts,.js,.cjs,.mjs --cache --ignore-path=.gitignore",

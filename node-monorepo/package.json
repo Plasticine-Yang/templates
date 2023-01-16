@@ -7,6 +7,8 @@
   "type": "module",
   "keywords": [],
   "scripts": {
+    "test": "vitest",
+    "test:u": "vitest -u",
     "commit": "cz",
     "up": "taze -wI",
     "prepare": "husky install"
