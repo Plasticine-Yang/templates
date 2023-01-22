@@ -1,29 +1,24 @@
-import { HttpException, HttpStatus } from '@nestjs/common'
-import { BUSINESS_ERROR_CODE } from './business.error.codes'
+import { HttpException, HttpExceptionOptions } from '@nestjs/common'
 
-interface BusinessError {
-  code: number
-  message: string
+interface BusinessHttpExceptionOptions extends HttpExceptionOptions {
+  /** @description HTTP 状态码 */
+  httpStatusCode?: number
 }
 
-class BusinessException extends HttpException {
-  constructor(err: BusinessError | string) {
-    if (typeof err === 'string') {
-      err = {
-        code: BUSINESS_ERROR_CODE.COMMON,
-        message: err,
-      }
-    }
-
-    super(err, HttpStatus.OK)
-  }
-
-  static throwForbidden() {
-    throw new BusinessException({
-      code: BUSINESS_ERROR_CODE.ACCESS_FORBIDDEN,
-      message: 'Permission Denied!',
+/**
+ * @description 业务异常
+ */
+class BusinessHttpException extends HttpException {
+  constructor(
+    public code: number,
+    public message: string,
+    options?: BusinessHttpExceptionOptions,
+  ) {
+    super(message, options?.httpStatusCode ?? 500, {
+      cause: options?.cause,
+      description: options?.description,
     })
   }
 }
 
-export { BusinessException }
+export { BusinessHttpException }

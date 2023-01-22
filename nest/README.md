@@ -1,25 +1,5 @@
-# nest-gateway
+# nest-demo
 
-An api gateway system powered by NestJS.
+## 配置文件
 
-## Usage
-
-### 1. config
-
-You should config your database and other info in the `.config` directory in your project root directory.
-
-For example, create `.config/.development.yaml`, and write the database configuration:
-
-```yaml
-# mongodb
-MONGODB_CONFIG:
-  host: localhost
-  port: 27017
-  username: xxx
-  password: xxx
-  type: mongodb
-  database: nest_gateway
-  entities: mongo
-  logging: false
-  synchronize: true
-```
+项目根目录下创建 `.confgi` 目录，里面编写对应环境的配置文件，比如 `development.yaml` 或 `development.yml`

@@ -1,21 +1,24 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
+import { LoggerModule } from 'nestjs-pino'
 
-import { MySQLModule, RedisModule } from './common/database'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 
-import { RuntimeErrorModule } from './runtime-error/runtime-error.module'
-import { loadConfig } from './utils'
+import { configModuleOptions } from './common/config-module-options'
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      ignoreEnvFile: true,
-      isGlobal: true,
-      load: [loadConfig],
+    ConfigModule.forRoot(configModuleOptions),
+    LoggerModule.forRoot({
+      pinoHttp: {
+        transport: {
+          target: 'pino-pretty',
+        },
+      },
     }),
-    RedisModule,
-    MySQLModule,
-    RuntimeErrorModule,
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
