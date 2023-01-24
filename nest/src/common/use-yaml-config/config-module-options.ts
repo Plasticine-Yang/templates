@@ -2,7 +2,7 @@ import { ConfigModuleOptions } from '@nestjs/config'
 
 import Joi from 'joi'
 
-import { loadYAMLConfiguration } from '../utils'
+import { loadYAMLConfiguration } from './load-yaml-configuration'
 
 export const configModuleOptions: ConfigModuleOptions = {
   load: [loadYAMLConfiguration],

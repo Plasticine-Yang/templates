@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 import { parse } from 'yaml'
 
-const CONFIG_DIR = resolve(__dirname, '../.config')
+const CONFIG_DIR = resolve(__dirname, '../../.config')
 
 /**
  * @description 根据 process.env.NODE_ENV 加载对应配置文件

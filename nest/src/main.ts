@@ -1,4 +1,4 @@
-import { ValidationPipe } from '@nestjs/common'
+import { ValidationPipe, VersioningType } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { Logger } from 'nestjs-pino'
 
@@ -12,6 +12,16 @@ import { BusinessResponseInterceptor } from './common/interceptors'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
+
+  // api 前缀
+  app.setGlobalPrefix('api')
+
+  // api 版本管理
+  app.enableVersioning({
+    // 以类似 URI: /api/v1 的方式进行版本管理
+    type: VersioningType.URI,
+    defaultVersion: '1',
+  })
 
   // 日志
   app.useLogger(app.get(Logger))
