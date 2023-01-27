@@ -22,7 +22,7 @@
     "test:u": "vitest -u",
     "build": "unbuild",
     "stub": "unbuild --stub",
-    "lint": "eslint src --fix --ext=.ts,.js,.cjs,.mjs --cache --ignore-path=.gitignore",
+    "lint": "eslint src --fix --ext=.ts,.js,.cjs,.mjs --cache",
     "commit": "cz",
     "changeset": "changeset add",
     "changeset:version": "changeset version",
