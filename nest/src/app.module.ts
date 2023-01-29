@@ -4,7 +4,7 @@ import { LoggerModule } from 'nestjs-pino'
 import { DatabaseModule } from './common/database'
 
 import { configModuleOptions } from './common/use-yaml-config'
-import { ApiCodeModule } from './modules/api-code/api-code.module'
+import { ApisCodeModule } from './modules/api-codes/api-codes.module'
 import { PostModule } from './modules/post/post.module'
 
 @Module({
@@ -26,7 +26,7 @@ import { PostModule } from './modules/post/post.module'
     DatabaseModule.forRoot({ type: 'mysql' }),
 
     // ============== business modules ==============
-    ApiCodeModule,
+    ApisCodeModule,
     PostModule,
   ],
 })

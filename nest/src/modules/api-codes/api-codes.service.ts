@@ -4,23 +4,23 @@ import {
   ApiCodeDescriptionMetadata,
   API_CODE_DESCRIPTION_METADATA_KEY,
 } from 'src/decorators'
-import { API_CODE_PROVIDER_KEY } from './api-code.provider'
+import { API_CODES_PROVIDER_KEY } from './api-codes.provider'
 
-type ApiCodeDescriptor = Record<number, string>
+type ApiCodesDescriptor = Record<number, string>
 
 @Injectable()
-export class ApiCodeService {
-  private apiCodeDescriptor: ApiCodeDescriptor
+export class ApiCodesService {
+  private apiCodesDescriptor: ApiCodesDescriptor
 
   constructor(
-    @Inject(API_CODE_PROVIDER_KEY)
+    @Inject(API_CODES_PROVIDER_KEY)
     private apiCodeProvider: Record<string, number>,
   ) {
-    this.apiCodeDescriptor = this.generateApiCodeDescriptor()
+    this.apiCodesDescriptor = this.generateApiCodesDescriptor()
   }
 
-  private generateApiCodeDescriptor(): ApiCodeDescriptor {
-    const apiCodeDescriptor: ApiCodeDescriptor = {}
+  private generateApiCodesDescriptor(): ApiCodesDescriptor {
+    const apiCodesDescriptor: ApiCodesDescriptor = {}
 
     // 遍历 apiCodeProvider 的所有静态属性 获取其对应的 metadata
     for (const propertyKey in this.apiCodeProvider) {
@@ -34,18 +34,18 @@ export class ApiCodeService {
 
       if (metadata) {
         const { apiCode, description } = metadata
-        apiCodeDescriptor[apiCode] = description
+        apiCodesDescriptor[apiCode] = description
       }
     }
 
-    return apiCodeDescriptor
+    return apiCodesDescriptor
   }
 
   findAll() {
-    return this.apiCodeDescriptor
+    return this.apiCodesDescriptor
   }
 
   findOne(apiCode: number) {
-    return this.apiCodeDescriptor[apiCode]
+    return this.apiCodesDescriptor[apiCode]
   }
 }

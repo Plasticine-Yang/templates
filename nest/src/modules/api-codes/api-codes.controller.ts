@@ -1,10 +1,10 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common'
 
-import { ApiCodeService } from './api-code.service'
+import { ApiCodesService } from './api-codes.service'
 
 @Controller('api-codes')
-export class ApiCodeController {
-  constructor(private readonly apiCodeService: ApiCodeService) {}
+export class ApiCodesController {
+  constructor(private readonly apiCodeService: ApiCodesService) {}
 
   @Get()
   findAll() {

@@ -1,24 +1,24 @@
 import { Test } from '@nestjs/testing'
 import { ApiCodeDescription } from 'src/decorators'
-import { API_CODE_PROVIDER_KEY } from './api-code.provider'
+import { API_CODES_PROVIDER_KEY } from './api-codes.provider'
 
-import { ApiCodeService } from './api-code.service'
+import { ApiCodesService } from './api-codes.service'
 
-describe('ApiCodeService', () => {
-  let service: ApiCodeService
+describe('ApiCodesService', () => {
+  let service: ApiCodesService
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
       providers: [
-        ApiCodeService,
+        ApiCodesService,
         {
-          provide: API_CODE_PROVIDER_KEY,
-          useValue: MOCK_API_CODE,
+          provide: API_CODES_PROVIDER_KEY,
+          useValue: MOCK_API_CODES,
         },
       ],
     }).compile()
 
-    service = module.get(ApiCodeService)
+    service = module.get(ApiCodesService)
   })
 
   it('should find all api code', () => {
@@ -38,7 +38,7 @@ describe('ApiCodeService', () => {
   })
 })
 
-class MOCK_API_CODE {
+class MOCK_API_CODES {
   @ApiCodeDescription('api 正常响应码')
   static SUCCESS = 0
 
