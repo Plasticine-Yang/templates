@@ -1,12 +1,11 @@
 {
-  "version": "0.0.0",
   "private": true,
   "author": "Plasticine-Yang",
-  "description": "node monorepo template",
   "license": "MIT",
   "type": "module",
-  "keywords": [],
   "scripts": {
+    "build:demo": "pnpm -C packages/demo build",
+    "stub:demo": "pnpm -C packages/demo stub",
     "test": "vitest",
     "test:u": "vitest -u",
     "commit": "cz",

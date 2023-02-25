@@ -1,4 +1,26 @@
 {
-  "name": "@namespace/demo",
-  "version": "0.0.0"
+  "name": "@node-monorepo/demo",
+  "version": "0.0.0",
+  "author": "Plasticine-Yang",
+  "description": "demo of @node-monorepo",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "keywords": [
+    "node-monorepo",
+    "demo"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  }
 }
