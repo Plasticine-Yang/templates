@@ -16,18 +16,16 @@
     }
   },
   "scripts": {
-    "start": "tsx",
-    "dev": "tsx --watch",
+    "dev": "tsup --watch",
+    "build": "tsup --dts",
     "test": "vitest",
     "test:u": "vitest -u",
-    "build": "unbuild",
-    "stub": "unbuild --stub",
     "lint": "eslint src --fix --ext=.ts,.js,.cjs,.mjs --cache",
     "commit": "cz",
     "changeset": "changeset add",
     "changeset:version": "changeset version",
     "changeset:publish": "changeset publish",
-    "up": "taze -wI",
+    "update-pkgs": "taze -wi",
     "prepare": "husky install"
   },
   "config": {
@@ -36,21 +34,21 @@
     }
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.0",
-    "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@changesets/cli": "^2.26.1",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "@plasticine-yang/eslint-config-typescript": "^0.1.6",
-    "@types/node": "^18.14.1",
+    "@types/node": "^18.15.13",
     "commitizen": "^4.3.0",
-    "cz-git": "^1.5.0",
-    "eslint": "^8.34.0",
+    "cz-git": "^1.6.1",
+    "eslint": "^8.39.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.2",
-    "prettier": "^2.8.4",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
     "taze": "^0.8.5",
-    "tsx": "^3.12.3",
+    "tsup": "^6.7.0",
+    "tsx": "^3.12.6",
     "typescript": "^4.9.5",
-    "unbuild": "^1.1.2",
     "vitest": "^0.28.5"
   }
 }
