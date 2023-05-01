@@ -1,6 +1,8 @@
 # @plasticine-monitor/server
 
-## 开发环境
+## Usage
+
+### 开发环境
 
 使用 `docker-compose` 完成开发环境的搭建，比如 MySQL 数据库
 
@@ -25,7 +27,7 @@ pnpm nest:dev
 pnpm env-dev:clean -v
 ```
 
-## 生产环境部署
+### 生产环境部署
 
 ```shell
 # 完整部署流程
@@ -52,7 +54,7 @@ pnpm run env-prod:clean
 
 项目根目录下创建 `.config` 目录，里面编写对应环境的配置文件，比如 `development.yaml` 或 `development.yml`
 
-示例配置文件如下：
+举个例子：
 
 ```yaml
 mysql:
@@ -65,6 +67,10 @@ mysql:
 ```
 
 修改了配置文件的话记得将 `docker-compose` 的配置文件也修改一下，比如 MySQL 端口改成了 3307，那么 docker-compose 中的 MySQL 容器映射端口也要改成 3307
+
+### 示例配置
+
+可以直接 copy 示例配置 `example-config` 中的配置到项目根目录的 `.config` 目录下，并根据需要自行改动
 
 ### 可配置项
 
