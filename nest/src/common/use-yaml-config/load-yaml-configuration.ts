@@ -1,6 +1,5 @@
 import { existsSync, readFileSync } from 'fs'
 import { resolve } from 'path'
-
 import { parse } from 'yaml'
 
 const CONFIG_DIR = resolve(__dirname, '../../.config')
@@ -26,6 +25,8 @@ export function loadYAMLConfiguration() {
 
   const fileContent = readFileSync(pathToTarget, { encoding: 'utf-8' })
   const resolvedConfig = parse(fileContent)
+
+  console.log('config', resolvedConfig)
 
   return resolvedConfig
 }

@@ -1,9 +1,8 @@
-import { ArgumentsHost, ExceptionFilter, HttpException } from '@nestjs/common'
-import type { Response } from 'express'
-import type { UncaughtExceptionResponse } from 'src/types'
-
-import { HttpStatus } from '@nestjs/common'
+import { ArgumentsHost, ExceptionFilter, HttpException, HttpStatus } from '@nestjs/common'
 import ErrorStackParser from 'error-stack-parser'
+import type { Response } from 'express'
+
+import type { UncaughtExceptionResponse } from 'src/types'
 
 class UncaughtExceptionFilter implements ExceptionFilter<unknown> {
   catch(exception: unknown, host: ArgumentsHost) {

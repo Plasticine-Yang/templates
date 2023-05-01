@@ -1,25 +1,18 @@
-import type { DatabaseConfig, EnvironmentVariables } from 'src/types'
-
-import { DataSource } from 'typeorm'
-
-import {
-  ConfigurableModuleBuilder,
-  DynamicModule,
-  Module,
-} from '@nestjs/common'
+import { ConfigurableModuleBuilder, DynamicModule, Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
+
+import type { DatabaseConfig, ProjectConfig } from 'src/types'
 
 interface DatabaseModuleOptions {
   type: 'mysql'
 }
 
-const { ConfigurableModuleClass, OPTIONS_TYPE } =
-  new ConfigurableModuleBuilder<DatabaseModuleOptions>({
-    moduleName: 'Database',
-  })
-    .setClassMethodName('forRoot')
-    .build()
+const { ConfigurableModuleClass, OPTIONS_TYPE } = new ConfigurableModuleBuilder<DatabaseModuleOptions>({
+  moduleName: 'Database',
+})
+  .setClassMethodName('forRoot')
+  .build()
 
 @Module({})
 export class DatabaseModule extends ConfigurableModuleClass {
@@ -31,7 +24,7 @@ export class DatabaseModule extends ConfigurableModuleClass {
       inject: [ConfigService],
 
       /** @description Load database configuration. */
-      useFactory: (configService: ConfigService<EnvironmentVariables>) => {
+      useFactory: (configService: ConfigService<ProjectConfig>) => {
         let databaseConfig: DatabaseConfig | undefined
 
         switch (type) {
@@ -40,9 +33,7 @@ export class DatabaseModule extends ConfigurableModuleClass {
             break
 
           default:
-            throw new Error(
-              `The database type '${type}' has not been supported.`,
-            )
+            throw new Error(`The database type '${type}' has not been supported.`)
         }
 
         if (databaseConfig === undefined) {

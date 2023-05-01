@@ -1,7 +1,8 @@
 import { Test } from '@nestjs/testing'
-import { ApiCodeDescription } from 'src/decorators'
-import { API_CODES_PROVIDER_KEY } from './api-codes.provider'
 
+import { ApiCodeDescription } from 'src/decorators'
+
+import { API_CODES_PROVIDER_KEY } from './api-codes.provider'
 import { ApiCodesService } from './api-codes.service'
 
 describe('ApiCodesService', () => {

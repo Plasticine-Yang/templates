@@ -22,10 +22,7 @@ export class PostService {
     })
 
     if (post) {
-      throw new BusinessHttpException(
-        API_CODE.ENTITY_DUPLICATED,
-        `标题为: '${title}' 的文章已存在，请勿重复创建`,
-      )
+      throw new BusinessHttpException(API_CODE.ENTITY_DUPLICATED, `标题为: '${title}' 的文章已存在，请勿重复创建`)
     }
 
     this.postRepository.save(createPostDto)
@@ -52,13 +49,9 @@ export class PostService {
     try {
       return this.postRepository.findOneByOrFail({ id })
     } catch (error) {
-      throw new BusinessHttpException(
-        API_CODE.ENTITY_NOT_EXIST,
-        `文章不存在 -- ${error}`,
-        {
-          httpStatusCode: HttpStatus.BAD_REQUEST,
-        },
-      )
+      throw new BusinessHttpException(API_CODE.ENTITY_NOT_EXIST, `文章不存在 -- ${error}`, {
+        httpStatusCode: HttpStatus.BAD_REQUEST,
+      })
     }
   }
 
